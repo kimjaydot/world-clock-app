@@ -19,7 +19,19 @@ function updateTime() {
 
     parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
     parisTimeElement.innerHTML = parisTime.format(
-      "h:mm:ss [<small>]A[</small>"
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
+  let stockholmElement = document.querySelector("#stockholm");
+  if (stockholmElement) {
+    let stockholmDateElement = stockholmElement.querySelector(".date");
+    let stockholmTimeElement = stockholmElement.querySelector(".time");
+    let stockholmTime = moment().tz("Europe/Stockholm");
+
+    stockholmDateElement.innerHTML = stockholmTime.format("MMMM Do YYYY");
+    stockholmTimeElement.innerHTML = stockholmTime.format(
+      "h:mm:ss [<small>]A[</small>]"
     );
   }
 }
